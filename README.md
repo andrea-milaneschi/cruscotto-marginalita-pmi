@@ -38,3 +38,5 @@ Una sola pagina HTML, senza dipendenze esterne oltre al font. Grafici in SVG dis
 
 Andrea Milaneschi · Controllo di gestione e analisi dei dati per PMI manifatturiere
 andreamilaneschi95@gmail.com · [LinkedIn](https://it.linkedin.com/in/andrea-milaneschi-a5abab196)
+
+<sub>Professione non organizzata in ordini o collegi ai sensi della Legge 14 gennaio 2013, n. 4. Non svolgo attività riservate agli iscritti in albi: revisione e attestazioni sui bilanci, adempimenti fiscali e del lavoro, mediazione creditizia.</sub>

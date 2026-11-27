@@ -8,7 +8,7 @@ Esempio interattivo dell'analisi che realizzo per le piccole e medie imprese man
 
 ## Il caso
 
-Pelletteria Esempio S.r.l., terzista di borse per marchi del lusso con 35 dipendenti. Azienda e numeri sono inventati, ma costruiti con proporzioni realistiche per il settore.
+Meccanica Esempio S.r.l., officina meccanica conto terzi con 35 dipendenti. Azienda e numeri sono inventati, ma costruiti con proporzioni realistiche per il settore.
 
 Nel 2025 i ricavi calano del 5% e l'EBITDA quasi si dimezza, da 674 a 360 mila euro. L'analisi per cliente mostra il motivo: il cliente principale vale il 39% dei ricavi ma assorbe il 49% delle ore di produzione, e rende 80 euro per ora di lavoro diretto contro i 107–192 euro degli altri clienti.
 

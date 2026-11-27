@@ -12,8 +12,7 @@
 <meta name="author" content="Andrea Milaneschi">
 
 <title>Cruscotto marginalità PMI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://andrea-milaneschi.github.io/fonts/libre-franklin.css">
 <style>
 /* VOICE work: a controller's dashboard shown to a business owner, newspaper graphics-desk standard
    IDEA the financial page of a newspaper that you can change: the finding as headline, then a live what-if desk
@@ -122,7 +121,7 @@ tr.tot td{font-weight:800}
 <body>
 <header class="band"><div class="wrap">
 <h1>Il cliente più grande vale il 39% dei ricavi, ma rende 80 euro l'ora contro i 107–192 degli altri</h1>
-<p class="sub">Pelletteria Esempio S.r.l., terzista di borse per marchi del lusso, 35 dipendenti. Bilanci 2023–2025 e dati di produzione del gestionale.</p>
+<p class="sub">Meccanica Esempio S.r.l., officina meccanica conto terzi, 35 dipendenti. Bilanci 2023–2025 e dati di produzione del gestionale.</p>
 <p class="sample">Azienda e numeri inventati, per mostrare il tipo di analisi. Importi in migliaia di euro.</p>
 <div class="kpis">
 <div class="kpi"><b>4.100</b><span>Ricavi 2025 · <em class="neg">−5%</em> sul 2024</span></div>
@@ -137,8 +136,8 @@ tr.tot td{font-weight:800}
 <p class="sub">Muovi i cursori: EBITDA, margini e cassa si ricalcolano sui dati dell'azienda.</p>
 <div class="desk">
 <div class="panel" id="controlli">
-<div class="ctl"><label for="price">Prezzo a Maison A <output id="o-price"></output></label><input type="range" id="price" min="0" max="15" step="1" value="0"><small>Aumento del listino al prossimo rinnovo</small></div>
-<div class="ctl"><label for="hours">Ore dirette su Maison A <output id="o-hours"></output></label><input type="range" id="hours" min="0" max="25" step="1" value="0"><small>Meno scarti, rilavorazioni e tempi di attrezzaggio</small></div>
+<div class="ctl"><label for="price">Prezzo a Gruppo A <output id="o-price"></output></label><input type="range" id="price" min="0" max="15" step="1" value="0"><small>Aumento del listino al prossimo rinnovo</small></div>
+<div class="ctl"><label for="hours">Ore dirette su Gruppo A <output id="o-hours"></output></label><input type="range" id="hours" min="0" max="25" step="1" value="0"><small>Meno scarti, rilavorazioni e tempi di attrezzaggio</small></div>
 <div class="ctl"><label for="days">Giorni medi di incasso <output id="o-days"></output></label><input type="range" id="days" min="60" max="120" step="1" value="103"><small>Oggi 103; nel 2024 erano 87</small></div>
 <div class="ctl"><label for="fixed">Costi fissi <output id="o-fixed"></output></label><input type="range" id="fixed" min="-10" max="10" step="1" value="0"><small>Personale indiretto, servizi generali, affitti (oggi 920)</small></div>
 <div class="btns"><button type="button" id="p-now" aria-pressed="true">Situazione 2025</button><button type="button" id="p-plan" aria-pressed="false">Piano consigliato</button></div>
@@ -150,7 +149,7 @@ tr.tot td{font-weight:800}
 <h3 style="margin:0 0 6px;font-size:17px">Ricavo per ora di lavoro diretto, per cliente</h3>
 <div id="clients"></div>
 <div class="minis">
-<div><b id="m-mdc">20,6%</b>Margine di Maison A</div>
+<div><b id="m-mdc">20,6%</b>Margine di Gruppo A</div>
 <div><b id="m-bep">3.472</b>Ricavi di pareggio</div>
 <div><b id="m-cash">0</b>Cassa liberata dagli incassi</div>
 </div>
@@ -173,7 +172,7 @@ tr.tot td{font-weight:800}
 </div></section>
 
 <section class="band alt" id="clienti"><div class="wrap">
-<h2>Maison A usa metà delle ore per il 39% dei ricavi</h2>
+<h2>Gruppo A usa metà delle ore per il 39% dei ricavi</h2>
 <div class="legend"><span><i style="background:var(--quiet)"></i>Materiali</span><span><i style="background:var(--teal)"></i>Lavorazioni esterne</span><span><i style="background:var(--ink)"></i>Lavoro diretto</span><span><i style="background:var(--claret)"></i>Margine</span></div>
 <div class="scroll"><table id="t-cli"></table></div>
 </div></section>
@@ -251,7 +250,7 @@ const fmt=v=>nf.format(Math.round(v));
 const sgn=v=>(v>0?'+':v<0?'−':'')+fmt(Math.abs(v));
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const CL=[{n:'Maison A',r:1600,m:300,e:330,l:640},{n:'Maison B',r:1000,m:200,e:160,l:300},{n:'Brand C',r:700,m:140,e:100,l:190},{n:'Brand D',r:500,m:110,e:70,l:120},{n:'Altri clienti',r:300,m:70,e:40,l:50}];
+const CL=[{n:'Gruppo A',r:1600,m:300,e:330,l:640},{n:'Gruppo B',r:1000,m:200,e:160,l:300},{n:'Cliente C',r:700,m:140,e:100,l:190},{n:'Cliente D',r:500,m:110,e:70,l:120},{n:'Altri clienti',r:300,m:70,e:40,l:50}];
 const RATE=32,FIX=920,AMM=165,CRED=4100*103/365,BASE=360;
 const CE=[['Ricavi',3800,4300,4100],['Materie prime e accessori',-684,-817,-820],['Servizi e lavorazioni esterne',-836,-989,-1004],['Godimento beni di terzi',-120,-120,-125],['Valore aggiunto',2160,2374,2150,1],['Costo del personale',-1550,-1700,-1790],['EBITDA',610,674,360,1],['Ammortamenti',-140,-150,-165],['EBIT',470,524,196,1],['Oneri finanziari',-40,-55,-72],['Imposte',-116,-127,-33],['Utile netto',314,342,90,1]];
 const tip=$('tip');
